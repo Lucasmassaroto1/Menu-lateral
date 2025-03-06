@@ -3,6 +3,7 @@ const menuLateral = document.querySelector('.menu-lateral');
 const conteudo = document.querySelector('.conteudo');
 const background = document.querySelector('.background');
 
+if(botao && menuLateral && conteudo && background){
 botao.addEventListener('click', () =>{
     botao.classList.toggle('ativo')
     menuLateral.classList.toggle('ativo')
@@ -16,4 +17,5 @@ background.addEventListener('click', () =>{
     conteudo.classList.remove('ativo')
     background.classList.remove('ativo')
     document.body.style.backgroundColor = '#ecf0f1'
-})
+});
+}
