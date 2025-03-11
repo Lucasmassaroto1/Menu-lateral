@@ -1,30 +1,26 @@
-:root{
-    --primary-color: #3498db;
-    --secondary-color: #2980b9;
-    --text-color: #ecf0f1;
-    --text-secundary-color: #000f1f;
-    --background-color: #34495e;
-}
-/* *{
+/* GERAL */
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} */
+    font-family: "Exo 2", sans-serif;
+}
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--text-color);
+    background: black;
+    color: white;
     transition: background-color 0.5s ease;
 }
+/* HEADER */
 .menu-lateral{
     position: fixed;
     left: -300px;
     top: 0;
     width: 300px;
     height: 100%;
-    background-color: var(--background-color);
+    background-color: #353333;
     z-index: 3;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: left 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 .menu-lateral.ativo{
     left: 0;
@@ -39,24 +35,37 @@ body{
 }
 .menu-lateral ul li a{
     text-decoration: none;
-    color: var(--text-color);
+    color: white;
     font-size: 18px;
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: transform 0.3s ease;
+}
+.menu-lateral ul li a:hover{
+    transition: text-decoration 0.3s ease;
+}
+.menu-lateral ul li a span{
+    text-decoration: none;
+}
+.menu-lateral ul li a:hover span{
+    text-decoration: underline;
+}
+.menu-lateral ul li:hover a{
+    transform: translateX(5px);
 }
 .menu-lateral ul li a i{
     font-size: 24px;
 }
 .menu-lateral ul li:hover{
-    background-color: var(--secondary-color);
+    background-color: #01916d;
 }
 .menu-lateral ul li a i:hover{
     transform: translateX(5px) rotate(5deg);
 }
 .toggle{
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: #00ca76;
+    color: white;
     position: fixed;
     left: 20px;
     top: 20px;
@@ -66,25 +75,21 @@ body{
     border: none;
     padding: 10px 15px;
     cursor: pointer;
-    transition: all 0.5s ease;
+    transition: left 0.5s ease, background-color 0.3s ease;
 }
 .toggle:hover{
-    background-color: var(--secondary-color);
+    background-color: #01916d;
+    box-shadow: 0px 0px 30px #01916d;
 }
 .toggle.ativo{
     left: 320px;
 }
 .conteudo{
-    margin-left: 80px;
-    padding: 40px;
-    color: var(--secondary-color);
-    background-color: var(--text-color);
-    transition: all 0.5s;
+    width: 100%;
+    transition: margin-left 0.5s ease;
 }
 .conteudo.ativo{
-    margin-left: 380px;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    margin-left: 300px;
 }
 .background{
     position: fixed;
@@ -96,8 +101,10 @@ body{
     opacity: 0;
     visibility: hidden;
     z-index: 2;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 .background.ativo{
     opacity: 1;
     visibility: visible;
+    backdrop-filter: blur(5px);
 }
